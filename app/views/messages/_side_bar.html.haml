@@ -4,20 +4,17 @@
       = current_user.name
     .side-header__lists
       .list
-        = link_to do
+        = link_to new_group_path do
           =icon 'fas','edit', class: "icon"
       .list
         = link_to edit_user_path(current_user) do
           =icon 'fas','cog', class: "icon"
 
   .groups
-    .group
-      .group__name
-        グループ１
-      .group__message
-        頑張ろう
-    .group
-      .group__name
-        グループ２
-      .group__message
-        頑張ろう
+    - current_user.groups.each do |group|
+      .group
+        = link_to group_message_path(group) do
+          .group__name
+            = group.name
+          .group__message
+            メッセージはまだありません

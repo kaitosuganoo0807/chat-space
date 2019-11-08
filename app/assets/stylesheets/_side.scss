@@ -38,10 +38,14 @@
       padding: 20px 0 40px;
       &__name {
         font-size: 15px;
+        color: white;
+        text-decoration: underline;
       }
       &__message {
       font-size: 11px;
       margin-top: 5px;
+      color: white;
+      text-decoration: underline;
       }
     }
   }
