@@ -1,0 +1,29 @@
+.chat
+  .header
+    .left-header
+      .left-header__title
+        グループ
+        .left-header__members
+          Member：
+          .member
+            kaito
+    .right-header
+      .right-header__edit-btn
+        Edit
+  .messages
+    .message
+      .message__upper-info
+        .message__upper-info__talker
+          かいと
+        .message__upper-info__date
+          2019/11/06(wed) 16:10:10
+      .message__text
+        kkkkkk
+  .form
+    %form
+      %input.form__message{:placeholder => " type a message", :type => "text"}
+        .form__sss
+          %label.form__image
+            = icon 'far','image'
+            %input{type: "file", class: "form__file"}
+        %input.form__submit{type: "submit", value: "Send"}
