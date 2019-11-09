@@ -52,10 +52,12 @@
           padding: 0 10px;
         }
       }
-      .message__text {
+      .lower-message {
         margin-top: 10px;
-        font-size: 14px;
-        color: #434a54;
+        &__content {
+          font-size: 14px;
+          color: #434a54;
+        }
       }
     }
   }

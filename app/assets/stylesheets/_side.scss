@@ -15,13 +15,13 @@
     }
     &__lists {
       display: inline-block;
-      float: right;
       .list {
         display: inline-block;
       }
       .icon {
         color: white;
         font-size: 14px;
+        
       }
     }
   }
