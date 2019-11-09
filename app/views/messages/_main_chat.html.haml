@@ -11,19 +11,23 @@
       .right-header__edit-btn
         Edit
   .messages
+    = render @messages
     .message
       .message__upper-info
         .message__upper-info__talker
-          かいと
+          = message.user.name
         .message__upper-info__date
-          2019/11/06(wed) 16:10:10
-      .message__text
-        kkkkkk
+          = message.created_at.strftime("%Y/%m/%d %H:%M")
+      .lower-message
+        - if message.content.present?
+        %p.lower-message__content
+          = message.content
+        = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
   .form
-    %form
-      %input.form__message{placeholder: " type a message", type: "text"}
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'form__message', plaseholder: 'type a message'
         .form__sss
-          %label.form__image
-            = icon 'far','image'
-            %input{type: "file", class: "form__file"}
-        %input.form__submit{type: "submit", value: "Send"}
+          = f.label :image, class: 'form__image' do
+            = icon 'far','image', class: 'icon'
+            = f.file_field :image, class: 'form__file'
+        = f.submit 'Send', class: 'form__submit'
