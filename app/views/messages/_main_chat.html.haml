@@ -5,11 +5,12 @@
         = @group.name
         .left-header__members
           Member：
-          .member
-            kaito
+          - @group.users.each do |user|
+            .member
+              = user.name
     .right-header
       .right-header__edit_btn
-        = link_to edit_group_path(current_user) do
+        = link_to edit_group_path(@group) do
           .right-header__edit
             Edit
   .messages
