@@ -20,6 +20,6 @@
       = f.text_field :content, class: 'form__message', plaseholder: 'type a message'
       .form__sss
         = f.label :image, class: 'form__image' do
-          = icon 'far','image', class: 'icon'
+          = fa_icon 'image', class: 'icon'
           = f.file_field :image, class: 'form__file'
       = f.submit 'Send', class: 'form__submit'
