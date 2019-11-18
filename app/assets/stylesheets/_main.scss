@@ -77,18 +77,21 @@
       height: 50px;
       width: calc(100% - 150px);
       border: none;
-      position: relative;
+      padding-left: 20px;
     }
-    &__sss {
-      height: 10px;
-      background-color: white;
-      position: absolute;
-      left: 600px;
-      .form__image {
+    &__mask {
+      height: 50px;
+      background-color: #ddd;
+      position: relative;
+      padding-right: 10px;
+      float: left;
+      &__image {
         font-size: 30px;
         line-height: 50px;
+        position: absolute;
+        right: 20px;
       }
-      .form__file {
+      .hidden {
         display: none;
       }
     }
@@ -100,6 +103,7 @@
       padding: 0 30px;
       margin-left: 15px;
       border: none;
+      float: right;
     }
   }  
 }

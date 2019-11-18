@@ -8,6 +8,8 @@
     height: 100px;
     line-height: 100px;
     padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
     &__name {
       font-size: 18px;
       font-weight: bold;
@@ -20,8 +22,7 @@
       }
       .icon {
         color: white;
-        font-size: 14px;
-        
+        font-size: 20px;
       }
     }
   }

@@ -1,6 +1,6 @@
 $(function(){
 
-  function buildMessage(message){
+  function buildHTML(message){
     image = ( message.image )?`<img class= "lower-message__image" src=${message.image} >` : "";
     let html = `<div class="message", data-message-id="${message.id}">
                   <div class="message__upper-info">
@@ -33,11 +33,11 @@ $(function(){
       processData: false,
       contentType: false
     })
-    .done(function(data){
-      let html = buildMessage(data);
+    .done(function(message){
+      let html = buildHTML(message);
       $('.messages').append(html);
       $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
-      $('form')[0].reset();
+      $('.new_message')[0].reset();
     })
     .fail(function(){
       alert("メッセージ送信に失敗しました");
@@ -57,7 +57,7 @@ $(function(){
       .done(function(messages){
         let insertHTML = '';
         messages.forEach(function(message){
-          insertHTML = buildMessage(message);
+          insertHTML = buildHTML(message);
           $('.messages').append(insertHTML);
           $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
         })
